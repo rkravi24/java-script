@@ -1,3 +1,5 @@
+/*
+
 let score = 33;
 
 console.log(typeof score);
@@ -41,3 +43,37 @@ let stringNumber = 24;
 let s = String(stringNumber);  //number into stirng
 console.log(s);
 console.log(typeof s);  //string
+
+*/
+
+
+//************** OPERATION ***********************
+
+
+/*
+console.log("Ravi" + "kumar");  //RaviKumar
+console.log(1+2);           //3
+console.log("1" + "2");     //12
+console.log("1"+2);         //12
+console.log("1"+2+2);       //122
+console.log(1+2+"2");       //32
+*/
+
+console.log(+true);         //1
+// console.log(true+);      //ERROR
+console.log(+"");           //0
+
+let gameScore = 100;
+gameScore++; //postfix
+console.log(gameScore);      //101
+
+++gameScore; //prefix
+console.log(gameScore);      //102
+
+
+
+
+
+
+
+
