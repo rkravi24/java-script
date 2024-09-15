@@ -24,4 +24,19 @@ const anotherString = newName.slice(-6,3);
 const myName = "     Ravi           ";
 console.log(myName.trim());
 
+const url = "https://ravi.com/ravi%10raj";
+
+const url2 = url.replace('%10','-'); //return a new string
+
+// console.log(url.replace('%10','-'));
+
+console.log(url);  //old value
+console.log(url2); //new value
+
+console.log(url.includes('ravi'));   //true
+
+const subName = "computer-Math-Physics-chemistry";
+console.log(subName.split('-'));    //Return a array
+
+
 
