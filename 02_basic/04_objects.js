@@ -31,12 +31,14 @@ const obj2 = {3:"c",4:"d"};
 // const obj3 = {obj1,obj2};
 // console.log(obj3);
 
-// const obj3 = Object.assign({},obj1,obj2);
+const obj3 = Object.assign({},obj1,obj2);
+//assign in a single array for two objects
 // console.log(obj3);
 
-const obj3 = {5:"e", 6:"f"};
-const obj4 = {...obj1,...obj2,...obj3};
-// console.log(obj4);
+const obj4 = {5:"e", 6:"f"};
+const obj5 = {...obj1,...obj2,...obj4};
+//assign in a single array for more than two objects
+// console.log(obj5);
 
 
 const oldUser = [
@@ -59,23 +61,52 @@ const oldUser = [
 // console.log(oldUser);
 
 
-console.log(user);
+// console.log(user);
 //array of data
 
-console.log(Object.keys(user));
+// console.log(Object.keys(user));
 //array of keys
 
-console.log(Object.values(user));
+// console.log(Object.values(user));
 //array of values
 
-console.log(Object.entries(user));
+// console.log(Object.entries(user));
 //[ [ 'id', '101' ], [ 'name', 'Ravi' ] ]
 
-console.log(user.hasOwnProperty("isLogged"));
+// console.log(user.hasOwnProperty("isLogged"));
 //false
 
-//more on object methods we can see in browser console.
+//we can see more on object methods in browser console.
+
+
+const course = {
+    courseName: "Js in Englis",
+    price: 249,
+    CourseInstructor: "Ravi"
+}
 
 
 
+//select a specific field
+//object destructring
 
+const {CourseInstructor} = course;
+// console.log(CourseInstructor);
+
+// or
+
+const {CourseInstructor: instructor} = course;
+// console.log(instructor);
+
+//Api jasion formate 
+// {
+//     "name" : "Ravi",
+//     "coursename" : "javascript",
+//     "price" : "free"
+// }
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
