@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM part four</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    // ADD ELEMENT I
+    function addLanguage(lanName){
+        const li = document.createElement('li');
+        li.innerHTML = `${lanName}`;
+        const add = document.querySelector('.language');
+        add.appendChild(li);
+    }
+    //in this method (innerHTML) all node travers then add in last 
+    addLanguage("python");
+    addLanguage("typescript");
+
+    //ADD OPTIMIZED WAY II
+    // no travers add directly at the last
+    function addLan (lanName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(lanName));
+        document.querySelector('.language').appendChild(li);
+    }
+
+    // EDIT VALUE method  I
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "Mojo";
+    
+    //EDIT II
+    const newli = document.createElement('li');
+    newli.textContent = "Go";
+    secondLang.replaceWith(newli);
+
+
+    //EDIT IIi
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>TypeScript</li>"
+
+
+    //REMOVE
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove();
+
+</script>
+</html>
