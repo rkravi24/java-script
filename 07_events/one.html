@@ -60,12 +60,18 @@
     // 1) Event bubbling  => false => dafault => track inside to outside.
     // 2) Event capturing  =>true => track outside to inside
 
-    /*case when event set on both parent class and a child class in that case by default first 
-     child calss event will execute and after that parent calss set event will execute.
-     (inside to outside). This is also called event bubbling set as false. (by default false).
+    /*Event Bubbling(Default behavior):
+    In event bubbling, when an event occurs on an element inside another element, the event handler for the innermost element is executed first, followed by the outer element’s event handlers.This flow is described as "inside to outside."
+    For example, if you click a button inside a div, the click event first triggers on the button, and then it bubbles up to the div, and so on up the DOM hierarchy.
+    By default, this bubbling behavior happens unless explicitly stopped by calling event.stopPropagation().
     
-     when set valie true it reverse the execution outside to inside. (called event capturing).
-     */
+    Event Capturing:
+    Event capturing is the reverse of bubbling.The event starts from the outermost element and moves inward to the target element.
+    This can be enabled by passing true as the third argument to addEventListener().When set to true, the event handler is executed during the capturing phase(outside to inside).
+    
+     Bubbling (default): First, the button's click event will be executed, followed by the div's click event.
+     Capturing (true): First, the div's click event will be executed, followed by the button's click event.
+    */
 
     // document.getElementById('images').addEventListener('click',function(e){
     //     console.log("clicked inside the ul");
