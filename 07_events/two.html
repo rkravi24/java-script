@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // //one time execute
+    // setTimeout(function(){
+    //     console.log("Ravi");
+    // },2000)
+
+    //OR
+
+    // const sayRavi = function(){
+    //     console.log("Ravi");
+    // }
+    // setTimeout(sayRavi,2000);
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Best JS Series";
+    }
+    // setTimeout(changeText,2000)
+    
+    //Clear time out
+    //stop setTimeout event
+
+    const pauseChangeText = setTimeout(changeText,2000);
+    
+    document.querySelector('#stop').addEventListener('click',function(e){
+        clearTimeout(pauseChangeText);
+        console.log("Paused");
+    }) 
+
+
+
+</script>
+</html>
