@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121;">
+
+</body>
+<script>
+
+//XMLHttp Request Ready state property 
+
+    /*
+Value   State       Description
+0   	UNSENT	    Client has been created. open() not called yet.
+1	    OPENED	    open() has been called.
+2	    HEADERS_    RECEIVED	send() has been called, and headers and status are available.
+3	    LOADING	    Downloading; responseText holds partial data.
+4	    DONE	    The operation is complete.
+*/
+
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+
+    /* XML Ajax Request */
+    /*XMLHttpRequest is a method by help of this we can send or receive the data.
+      It is a method so we need to create a object.
+    */
+    const xhr = new XMLHttpRequest();
+
+    //open has been Called ,takes two parameter.(method(GET OR POST) and String)
+    xhr.open('GET', requestUrl);
+
+    //track for check only one time
+    console.log(xhr.readyState)
+    
+    //Continously tracking
+    xhr.onreadystatechange = function(){
+        //see the tracking stage
+        // console.log(xhr.readyState);
+
+        if(xhr.readyState===4){
+            //Response data comes in String so we change into a object.
+            // using JSON.parse
+            const data = JSON.parse(this.responseText);
+            console.log(data.followers);
+        }
+    }
+    //send has been called
+    xhr.send();
+
+
+</script>
+
+</html>
