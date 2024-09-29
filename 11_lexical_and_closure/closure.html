@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+<script>
+//Lexical Scoping
+
+    // function Outer() {
+    //     let name = "Mozilla";
+    //     function Inner() {
+    //         console.log(name);
+    //     }
+    //     Inner();
+    // }
+    // Outer();
+
+
+//Closure
+//when function will return then also lexical scope of this function will return.
+    function makeFun(){
+        const name = "Mozilla";
+        function displayName(){
+            console.log(name);
+        }
+        return displayName;
+    }
+    const myFunc = makeFun();
+    myFunc();
+</script>
+
+ 
+<script>
+    /*
+    document.getElementById('orange')
+        .onclick = function(){
+            document.body.style.backgroundColor = `orange`;
+        }
+
+    document.getElementById('green')
+        .onclick = function(){
+            document.body.style.backgroundColor = `green`;
+        }
+    
+    */
+
+    //Help of function
+    function clickHandler(color){
+        //document.body.style.backgroundColor = `${color}`;
+        /*upera wala line bina button click kiye color set kar dega.
+          but hum chahte hain jab button click ho tabhi ye execute ho.
+          aur onclcik ko ek function chahiye hota hai, jo button click hone pe execute ho.   
+        */
+       
+        //esiliye hum onclick ko ek function return krege.
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler("orange");
+    document.getElementById('green').onclick = clickHandler("green");
+
+</script>
+
+</html>
